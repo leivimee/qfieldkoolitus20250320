@@ -41,14 +41,14 @@ Menüü kaudu toimida järgnevalt
 
 `Kiht` \> `Andmeallika haldur` \> `WMS/WMTS` \> `Uus ühendus`
 
-\[!NOTE\] WMS allikate seadistus on vaja teha vaid esimesel QGIS
-kasutuskorral. Järgmistel kordadel on lisatud allikad juba allikate
-brauseris olemas.
+> \[!NOTE\] WMS allikate seadistus on vaja teha vaid esimesel QGIS
+> kasutuskorral. Järgmistel kordadel on lisatud allikad juba allikate
+> brauseris olemas.
 
-\[!CAUTION\] WMS aluskaartide kasutamine on võimalik vaid olukorras, kus
-on tagatud püsiv internetiühendus 4G/5G võrgu kaudu. Juhul kui see
-võimalik ei ole, on tungivalt soovitatav ette valmistada ka Maa- ja
-ruumiameti ortofotodest koostatud aluskaart.
+> \[!CAUTION\] WMS aluskaartide kasutamine on võimalik vaid olukorras,
+> kus on tagatud püsiv internetiühendus 4G/5G võrgu kaudu. Juhul kui see
+> võimalik ei ole, on tungivalt soovitatav ette valmistada ka Maa- ja
+> ruumiameti ortofotodest koostatud aluskaart.
 
 ### Ortofotode allalaadimine \[edasijõudnutele\]
 
