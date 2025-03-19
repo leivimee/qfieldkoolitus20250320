@@ -12,12 +12,16 @@ See hõlmab järgnevaid tegevusi:
 - Sisestusvormide kohandamist
 - Projekti eksport QField või QFieldCloud jaoks
 
+Käesolev juhend annab pealiskaudse kirjelduse etappidest, mis koolituse
+käigus juhendaja eestvedamisel läbitakse.
+
 ## QGIS projekti loomine
 
 Projektiks nimetatakse tööseansi seisu. Tööseanss sisaldab kihtide
 vaatesse laetud kaardimaterjale ning neile omistatud stiile ning
 muudatusi omadusted. Tööseansi olek on võimalik salvestada
-projektifailiks, millel on QGZ laiend.
+projektifailiks, millel on QGZ laiend. Projekti lisamine menüü kaudu
+toimub järgnevalt.
 
 `Projekt` \> `Uus`
 
@@ -37,6 +41,27 @@ Menüü kaudu toimida järgnevalt
 
 `Kiht` \> `Andmeallika haldur` \> `WMS/WMTS` \> `Uus ühendus`
 
+> \[!NOTE\] WMS allikate seadistus on vaja teha vaid esimesel QGIS
+> kasutuskorral. Järgmistel kordadel on lisatud allikad juba allikate
+> brauseris olemas.
+
+> \[!CAUTION\] WMS aluskaartide kasutamine on võimalik vaid olukorras,
+> kus on tagatud püsiv internetiühendus 4G/5G võrgu kaudu. Juhul kui see
+> võimalik ei ole, on tungivalt soovitatav ette valmistada ka Maa- ja
+> ruumiameti ortofotodest koostatud aluskaart.
+
+### Ortofotode allalaadimine \[edasijõudnutele\]
+
+Ortofototosid kaardilehted kaupa saab alla laadida
+[Geoportaali](https://geoportaal.maaamet.ee/index.php?lang_id=1&page_id=610)
+vahendusel. Seda võib teha käsitsi, teades kaardilehtede numbreid, kuid
+suurte alade kohta, kus on vaja alla laadida kümneid kaardilehti, on see
+äärmiselt tülikas. Lihtne allalaadimise algoritm on esitatud R-koodis
+[ofdown.R](/ofdown.R). Selles tuleb eelnevalt seadistada allalaetavate
+kaardilehtede numbrid.
+
+    laeruudud <- c(53331,53332,53333,53334)
+
 ### Taustamaterjalide lisamine
 
 Vaatluste kogumisel on sageli vaja infot ka seireala või seirealal asuva
@@ -50,7 +75,7 @@ punktid ja seirealad.
 
 Järgnevalt seadista taustakihtide stiilid.
 
-Viimaseks sammuks projekti loomisel on selle salvestamine.
+Viimaseks sammuks projekti loomisel on selle salvestamine. :tada:
 
 ## Vaatluste alusfailide loomine
 
@@ -97,7 +122,7 @@ Lisa väljad:
 Selle etapi läbimisel on vaatluste kogumiseks mõeldud aluskaardid
 loodud. :tada:
 
-### Sisestusvormide loomine
+## Sisestusvormide loomine
 
 Selles etapis loome kogumiseks mõeldud kaardifailidele sisestusvormid.
 
@@ -109,7 +134,7 @@ valemites võimalik kasutada. Selleks vt `Kihi omadused` \> `Allikas` \>
 #### Peibutuspunktid (loendus.gpkg - punkt)
 
 Ava kihi omadused (*Layer properties*) 2xLMB[^2] ning vali avanenud akna
-vasakult menüüst `Attributes form`. Anna igale väljale järgnevad
+vasakult menüüst *Attributes form*. Anna igale väljale järgnevad
 omadused.
 
 **skeem**
@@ -142,7 +167,7 @@ omadused.
   - Alias: “Vaatleja”
   - [x]  Reuse last entered value
 - Vidina tüüp: Väärtuskaart
-  - lae väärtused CSV failist ‘seiretiim.csv’
+  - lae väärtused CSV failist [seiretiim.csv](/seiretiim.csv)
 
 **kommentaar**
 
@@ -162,7 +187,8 @@ omadused.
 
 #### Vaatlused (loendus.gpkg - vaatlus)
 
-Ava *Attributes form* . Anna igale väljale järgnevad omadused.
+Ava kihi omaduste dialoog (2xLMB kihi nimel) ning liigu jaotisele
+*Attributes form*. Anna igale väljale järgnevad omadused.
 
 **skeem**
 
@@ -218,7 +244,7 @@ Ava *Attributes form* . Anna igale väljale järgnevad omadused.
 - Üldine
   - Alias: “Tegevus”
 - Vidina tüüp: Väärtuskaart
-  - lae väärtused CSV failist ‘tkood.csv’
+  - lae väärtused CSV failist [tkood.csv](/tkood.csv)
 - Vaikeväärtus
   - Vaikeväärtused: ‘s’
 
@@ -227,7 +253,7 @@ Ava *Attributes form* . Anna igale väljale järgnevad omadused.
 - Üldine
   - Alias: “Pesitsuskindlus”
 - Vidina tüüp: Väärtuskaart
-  - lae väärtused CSV failist ‘pkkood.csv’
+  - lae väärtused CSV failist [pkkood.csv](/pkkood.csv)
 - Vaikeväärtus
   - Vaikeväärtused: ‘l’
 
@@ -247,7 +273,7 @@ Ava *Attributes form* . Anna igale väljale järgnevad omadused.
   - Alias: “Vaatleja”
   - [x]  Reuse last entered value
 - Vidina tüüp: Väärtuskaart
-  - lae väärtused CSV failist ‘seiretiim.csv’
+  - lae väärtused CSV failist [seiretiim.csv](/seiretiim.csv)
 
 **kommentaar**
 
@@ -261,7 +287,7 @@ Ava *Attributes form* . Anna igale väljale järgnevad omadused.
   - Alias: “Ajatempel”
   - [ ]  Redigeeritav
 - Vidina tüüp: Kuupäev/aeg
-  - Display format: Kohandatud: yyyy-MM-dd HH:mm
+  - Display format: Kohandatud: “yyyy-MM-dd HH:mm”
 - Vaikeväärtus
   - Vaikeväärtused: `now()`
 
@@ -283,6 +309,8 @@ toimub seadmesse.
 
 Ekspordiks on kaks võimalust: pilve (QFIeldCloud) või seadmesse (Paki
 QField’i jaoks).
+
+:tada:
 
 [^1]: **R**ight **M**ouse **B**utton ehk hiire parema nupu vajutus
 

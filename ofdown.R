@@ -1,4 +1,8 @@
+# seadista töökaust oma kõvakettal
 setwd("G:/_qfield/qfieldkoolitus20250320")
+
+# juhul kui kasutad seda esmakordselt, installi paketid
+# install.packages(c("tidyverse,"sf","progress"))
 
 library(dplyr)
 library(readr)
@@ -6,6 +10,8 @@ library(sf)
 library(ggplot2)
 library(progress)
 
+# URL toorik, kus RUUT asendatakse lehe numbriga ning KPV ülelennu kuupäevaga
+# OLULINE! ajakohase foto saamiseks tuleb alla laadida ajakohane kartogramm (1:10000).
 ofurl<-"https://geoportaal.maaamet.ee/index.php?lang_id=1&plugin_act=otsing&kaardiruut=RUUT&andmetyyp=ortofoto_eesti_rgb&dl=1&f=RUUT_OF_RGB_GeoTIFF_KPV.zip&no_cache=67bab253bbc0a&page_id=610"
 # https://geoportaal.maaamet.ee/index.php?lang_id=1&plugin_act=otsing&kaardiruut=63082&andmetyyp=ortofoto_eesti_rgb&dl=1&f=63082_OF_RGB_GeoTIFF_2022_06_25.zip&no_cache=642a32b14d177&page_id=610
 # https://geoportaal.maaamet.ee/index.php?lang_id=1&plugin_act=otsing&kaardiruut=53334&andmetyyp=ortofoto_eesti_rgb&dl=1&f=53334_OF_RGB_GeoTIFF_2023_06_08-06_09.zip&no_cache=67bab7d365bba&page_id=610
