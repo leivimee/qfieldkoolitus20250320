@@ -220,6 +220,17 @@ Ava kihi omaduste dialoog (2xLMB kihi nimel) ning liigu jaotisele
 
 **liik**
 
+- Üldine
+  - Alias: “Liik, 3+3 kood”
+- Vidina tüüp: Tekstiväli
+- Vidina tüüp: Väärtuskaart
+
+Seda välja võib kohendada vastavalt projekti eripäradele. Eesti lindude
+nimestiku 3+3 koodi ja Eesti keelse nimega leiab failist
+[linnud_lyh_ek_syst.csv](/linnud_lyh_ek_syst.csv). Eesti lindude
+nimestiku 3+3 koodi ja teadusliku nimega leiab failist
+[linnud_lyh_lk_syst.csv](/linnud_lyh_lk_syst.csv).
+
 **arv**
 
 - Üldine
