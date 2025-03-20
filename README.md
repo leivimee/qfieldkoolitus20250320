@@ -112,7 +112,7 @@ Lisa väljad:
 - skeem (sõne)
 - punkti_nr (täisarv)
 - liik (sõne)
-- arv (sõne)
+- arv (täisarv)
 - sugu (sõne)
 - tegevus (sõne)
 - pkood (sõne)
@@ -120,6 +120,10 @@ Lisa väljad:
 - vaatleja (sõne)
 - kommentaar (sõne)
 - datetime (kuupäev ja kellaaeg)
+
+Kinnitamisel pakutakse kolme valikut:
+
+\[ \] Kirjutan üle \[x\] Add new layer \[ \] Cancel
 
 Selle etapi läbimisel on vaatluste kogumiseks mõeldud aluskaardid
 loodud. :tada:
@@ -138,6 +142,12 @@ valemites võimalik kasutada. Selleks vt `Kihi omadused` \> `Allikas` \>
 Ava kihi omadused (*Layer properties*) 2xLMB[^2] ning vali avanenud akna
 vasakult menüüst *Attributes form*. Anna igale väljale järgnevad
 omadused.
+
+> :warning: Iga välja vormi seadistemise järel tuleb vajutada *Apply*.
+
+**fid**
+
+- Vidina tüüp: Varjatud
 
 **skeem**
 
@@ -161,7 +171,7 @@ omadused.
   - Maksimum: 999
 - Vaikeväärtus
   - Vaikeväärtused:
-    `array_first(overlay_nearest('punktide', "punkti_nr"))`
+    `array_first(overlay_nearest('punktid', "punkti_nr"))`
 
 **vaatleja**
 
@@ -236,12 +246,19 @@ Ava kihi omaduste dialoog (2xLMB kihi nimel) ning liigu jaotisele
   - Alias: “Liik, 3+3 kood”
 - Vidina tüüp: Tekstiväli
 - Vidina tüüp: Väärtuskaart
+- Piirangud: Mitte null
 
 Seda välja võib kohendada vastavalt projekti eripäradele. Eesti lindude
 nimestiku 3+3 koodi ja Eesti keelse nimega leiab failist
 [linnud_lyh_ek_syst.csv](/linnud_lyh_ek_syst.csv). Eesti lindude
 nimestiku 3+3 koodi ja teadusliku nimega leiab failist
-[linnud_lyh_lk_syst.csv](/linnud_lyh_lk_syst.csv).
+[linnud_lyh_lk_syst.csv](/linnud_lyh_lk_syst.csv). Mõistlik on kasutada
+versiooni, kus välja kirjelduses on nii 3+3 kood ja eestikeelne nimi:
+[linnud_lyh-ek_syst.csv](/linnud_lyh-ek_syst.csv).
+
+> :warning: \[x\] **Mitte null** piirangu puhul antakse hoiatus juhul
+> kui väli on täitmata. \[x\] **Jõusta not null piirang** puhul ei lase
+> QField nähtust salvestada juhul kui väli on täitmata.
 
 **arv**
 
@@ -315,6 +332,7 @@ nimestiku 3+3 koodi ja teadusliku nimega leiab failist
   - Vaikeväärtused: `now()`
 
 Selle etapiga on sisestusvormid loodud. Ära unusta oma tööd salvestada.
+
 :tada:
 
 ## Eksport
