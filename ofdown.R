@@ -16,6 +16,8 @@ ofurl<-"https://geoportaal.maaamet.ee/index.php?lang_id=1&plugin_act=otsing&kaar
 # https://geoportaal.maaamet.ee/index.php?lang_id=1&plugin_act=otsing&kaardiruut=63082&andmetyyp=ortofoto_eesti_rgb&dl=1&f=63082_OF_RGB_GeoTIFF_2022_06_25.zip&no_cache=642a32b14d177&page_id=610
 # https://geoportaal.maaamet.ee/index.php?lang_id=1&plugin_act=otsing&kaardiruut=53334&andmetyyp=ortofoto_eesti_rgb&dl=1&f=53334_OF_RGB_GeoTIFF_2023_06_08-06_09.zip&no_cache=67bab7d365bba&page_id=610
 
+# Viimase 1:10000 kartogrammi leiab Geoportaalist.
+# https://geoportaal.maaamet.ee/est/Ruumiandmed/Kaardilehtede-susteemid/Kaardiruudustikud-allalaadimiseks-p488.html
 # lae kartogramm
 c10<-st_read("src/epk10T.shp")
 # anna ruudud käsitsi

@@ -58,7 +58,9 @@ vahendusel. Seda võib teha käsitsi, teades kaardilehtede numbreid, kuid
 suurte alade kohta, kus on vaja alla laadida kümneid kaardilehti, on see
 äärmiselt tülikas. Lihtne allalaadimise algoritm on esitatud R-koodis
 [ofdown.R](/ofdown.R). Selles tuleb eelnevalt seadistada allalaetavate
-kaardilehtede numbrid.
+kaardilehtede numbrid. Eelnevalt on omale vaja alla laadida värskeim
+1:10000 kartogramm. Koodis tuleb vajalike ruutude allalaadimiseks muuta
+järgnevat rida.
 
     laeruudud <- c(53331,53332,53333,53334)
 
@@ -213,10 +215,20 @@ Ava kihi omaduste dialoog (2xLMB kihi nimel) ning liigu jaotisele
 - Vaikeväärtus
   - Vaikeväärtused:
     `array_first(overlay_nearest('punkt', "punkti_nr"))` - väljastab
-    vaatlusele lähima punkti
+    vaatlusele lähima punkti numbri
+  - Vaikeväärtused:
+    `array_first(overlay_nearest('punkt', "punkti_nr", max_distance:= 100))` -
+    väljastab vaatluse lähima punkti numbri, juhul kui see jääb 100
+    meetri raadiusse
   - Vaikeväärtused:
     `array_last(aggregate('punkt','array_agg',"punkti_nr"))` - väljastab
     viimati registreeritud punkti
+
+> :warning: Lähima punkti numbri leidmisel tuleb silmas pidada, et kui
+> vaatlus on lähemal kui mõni teine punkt, siis omistatakse vaatlusele
+> selle punkti number. Kuna eesmärk on leida punkti number, kust
+> teoastati vaatlus, siis on korrektne kasutada viimati sisestatud
+> punkti kirjet.
 
 **liik**
 
