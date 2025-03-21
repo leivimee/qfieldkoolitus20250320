@@ -77,7 +77,9 @@ punktid ja seirealad.
 
 Järgnevalt seadista taustakihtide stiilid.
 
-Viimaseks sammuks projekti loomisel on selle salvestamine. :tada:
+Viimaseks sammuks projekti loomisel on selle salvestamine.
+
+:tada:
 
 ## Vaatluste alusfailide loomine
 
@@ -125,8 +127,13 @@ Kinnitamisel pakutakse kolme valikut:
 
 \[ \] Kirjutan üle \[x\] Add new layer \[ \] Cancel
 
+> :no_entry: *Kirjutan üle* valiku puhul kirjutatakse andmebaas (gpkg)
+> üle ning kaotad sinna varasemalt loodud kihid.
+
 Selle etapi läbimisel on vaatluste kogumiseks mõeldud aluskaardid
-loodud. :tada:
+loodud.
+
+:tada:
 
 ## Sisestusvormide loomine
 
@@ -246,19 +253,25 @@ Ava kihi omaduste dialoog (2xLMB kihi nimel) ning liigu jaotisele
   - Alias: “Liik, 3+3 kood”
 - Vidina tüüp: Tekstiväli
 - Vidina tüüp: Väärtuskaart
-- Piirangud: Mitte null
+- Piirangud
+  - [x]  Mitte null
+  - [x]  Jõusta not null piirang
 
 Seda välja võib kohendada vastavalt projekti eripäradele. Eesti lindude
-nimestiku 3+3 koodi ja Eesti keelse nimega leiab failist
+nimestiku 3+3 koodi (väärtusena) ja Eesti keelse nimega (kirjeldusena
+ehk nähtava valikuna) leiab failist
 [linnud_lyh_ek_syst.csv](/linnud_lyh_ek_syst.csv). Eesti lindude
-nimestiku 3+3 koodi ja teadusliku nimega leiab failist
+nimestiku 3+3 koodi (väärtusena) ja teadusliku nimega (kirjeldusena ehk
+nähtava valikuna) leiab failist
 [linnud_lyh_lk_syst.csv](/linnud_lyh_lk_syst.csv). Mõistlik on kasutada
 versiooni, kus välja kirjelduses on nii 3+3 kood ja eestikeelne nimi:
-[linnud_lyh-ek_syst.csv](/linnud_lyh-ek_syst.csv).
+[linnud_lyh-ek_syst.csv](/linnud_lyh-ek_syst.csv). Seda seetõttu, et
+nähtava valiku järgi on võimalik kirjeid rakenduses otsida. Sel juhul
+saab seda teha 3+3 koodi ning eestikeelse nime osa järgi.
 
-> :warning: \[x\] **Mitte null** piirangu puhul antakse hoiatus juhul
-> kui väli on täitmata. \[x\] **Jõusta not null piirang** puhul ei lase
-> QField nähtust salvestada juhul kui väli on täitmata.
+> :warning: **Mitte null** piirangu puhul antakse hoiatus juhul kui väli
+> on täitmata. **Jõusta not null piirang** puhul ei lase QField nähtust
+> salvestada juhul kui väli on täitmata.
 
 **arv**
 

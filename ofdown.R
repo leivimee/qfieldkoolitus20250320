@@ -31,13 +31,12 @@ seirealac10<-c10 %>% st_intersects(seireala)
 laeruudud <- c10 %>% slice(which(lengths(seirealac10)>0)) %>% st_drop_geometry() %>% select(NR) %>% unlist() %>% unname()
 
 cells10k<-c10 %>% filter(NR %in% laeruudud)
-n<-nrow(cells10k)
 
-pb <- txtProgressBar(min = 1, max = n, style = 3)
 dstfolder<-"./"
-
+n<-nrow(cells10k)
+pb <- progress_bar$new(format = "  laen alla [:bar] :percent eta: :eta", total = n, clear = FALSE, width= 60)
 for(i in 1:n) {
-  #i<-1
+  #i<-3
   ruut<-cells10k$NR[i]
   kpv<-cells10k$LENNUAEG[i]
   URL<-gsub("RUUT",ruut,ofurl)
@@ -49,14 +48,11 @@ for(i in 1:n) {
     fkpv<-paste0(format(as.Date(paste0(kpvs[1],".",kpvy), format="%d.%m.%Y"), format="%Y_%m_%d"), "-", format(as.Date(kpvs[2], format="%d.%m.%Y"), format="%m_%d"))
   }  else {
     fkpv<-format(as.Date(kpv, format="%d.%m.%Y"), format="%Y_%m_%d")
-    next;
   }
   URL<-gsub("KPV",fkpv,URL)
   down<-try( download.file(URL, destfile = paste0(dstfolder,"/",ruut,"_",fkpv,".zip"), method="curl", quiet=T) )
-  setTxtProgressBar(pb, i)
+  pb$tick()
 }
-
-close(pb)
 
 
 
