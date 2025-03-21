@@ -125,7 +125,9 @@ Lisa väljad:
 
 Kinnitamisel pakutakse kolme valikut:
 
-\[ \] Kirjutan üle \[x\] Add new layer \[ \] Cancel
+- [ ]  Kirjutan üle
+- [x]  Add new layer
+- [ ]  Cancel
 
 > :no_entry: *Kirjutan üle* valiku puhul kirjutatakse andmebaas (gpkg)
 > üle ning kaotad sinna varasemalt loodud kihid.
